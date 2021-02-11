@@ -1,0 +1,7 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo-payments
+    ports:
+      - "27017:27017"
