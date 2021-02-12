@@ -16,7 +16,7 @@ class FriendWebMapper {
   }
 
   Friend webToEntity(FriendWebModel friendIn) {
-    
+
     log.info("mapperWebIn: {}", friendIn);
 
     return Friend.builder().id(friendIn.getId()).name(friendIn.getName()).build();

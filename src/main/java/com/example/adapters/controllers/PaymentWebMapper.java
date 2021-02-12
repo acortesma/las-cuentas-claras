@@ -26,7 +26,7 @@ class PaymentWebMapper {
   }
 
   Payment webToEntity(PaymentWebModel paymentWebModel) {
-    
+
     log.info("mapperWebIn: {}", paymentWebModel);
 
     return Payment.builder()
