@@ -38,6 +38,12 @@ mvn clean install
 ````
 
 ### Ejecución en local
+
+Primero se debe de iniciar una bbdd Mongodb, se puede usar el docker-compose incluido en el proyecto:
+````shell script
+docker-compose -f docker-compose.yml up
+````
+
 El proyecto se ejecuta mediante la instrucción:
 ````shell script
 mvn spring-boot:run

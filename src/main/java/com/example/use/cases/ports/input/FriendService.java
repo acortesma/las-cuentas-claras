@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 public interface FriendService {
 
-  Flux<Friend> retrieveFriends(String filter);
+  Flux<Friend> retrieveAllFriendsFromGroup();
 
   Mono<Friend> addFriendToPaymentsGroup(Friend friend);
 }

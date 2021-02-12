@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 public interface FriendRepository {
 
-  Flux<Friend> getModelPersistence();
+  Flux<Friend> getAll();
 
   Mono<Friend> create(Friend friend);
 }

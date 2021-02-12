@@ -12,4 +12,12 @@ spring:
       host: localhost
       port: 27017
       database: sampledb
-      
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+  webflux:
+    format:
+      date-time:  yyyy-MM-dd HH:mm:ss
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+spring.jackson.serialization.FAIL_ON_EMPTY_BEANS: false

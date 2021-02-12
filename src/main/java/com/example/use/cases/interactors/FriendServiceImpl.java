@@ -14,9 +14,9 @@ public class FriendServiceImpl implements FriendService {
 
   private final FriendRepository friendRepository;
 
-  public Flux<Friend> retrieveFriends(String filter) {
+  public Flux<Friend> retrieveAllFriendsFromGroup() {
 
-    return friendRepository.getModelPersistence();
+    return friendRepository.getAll();
   }
 
   @Override

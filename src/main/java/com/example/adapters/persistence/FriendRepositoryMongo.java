@@ -14,7 +14,7 @@ public class FriendRepositoryMongo implements FriendRepository {
   private FriendPersistenceMapper friendMapper;
   private FriendReactiveMongoRepository friendRepository;
 
-  public Flux<Friend> getModelPersistence() {
+  public Flux<Friend> getAll() {
 
     return friendRepository.findAll().map(friendMapper::modelToEntity);
   }
