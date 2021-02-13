@@ -1,13 +1,11 @@
 package com.example.adapters.controllers;
 
-import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.entities.BalanceFriend;
-import com.example.entities.Friend;
 import com.example.use.cases.ports.input.PaymentService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -47,26 +45,8 @@ public class PaymentController {
   }
 
   @GetMapping("/balance")
-  public Mono<Map<Friend, Double>> calculateBalanceByEachfriend() {
-
-    return service.calculateBalanceByEachfriend().doOnNext(p -> log.info("controller {}", p));
-  }
-
-  @GetMapping("/balance2")
-  public Mono<Map<String, Double>> calculateBalanceByEachfriend2() {
-
-    return service.calculateBalanceByEachfriend2().doOnNext(p -> log.info("controller {}", p));
-  }
-
-  @GetMapping("/balanceGroup")
-  public Flux<BalanceFriend> calculateBalanceGroup() {
-
-    return service.calculateBalanceGroup().doOnNext(p -> log.info("controller {}", p));
-  }
-
-  @GetMapping("/balanceGroup2")
   public Flux<BalanceFriend> calculateBalanceGroup2() {
 
-    return service.calculateBalanceGroup2().doOnNext(p -> log.info("controller {}", p));
+    return service.calculateBalanceGroupFriends().doOnNext(p -> log.info("controller {}", p));
   }
 }

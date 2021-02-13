@@ -9,7 +9,7 @@ public class BalanceFriend {
 
   private final String name;
   private Double amount;
-  private Double balance = 0D;
+  private Double balance;
 
   public BalanceFriend(String name, Double amount) {
     this.name = name;
