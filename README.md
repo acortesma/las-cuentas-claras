@@ -53,7 +53,7 @@ El api del servicio se puede consultar localmente en: http://localhost:8080/swag
 ### Ejecución en contenedor Docker
 El proyecto dispone de un fichero DockerFile para poder ejecutar la aplicación dentro de un contendor
 
-Para generar la imagen ejecute en la raíz del proyecto:
+Para generar la imagen, ejecute en la raíz del proyecto:
 ````shell script
 mvn clean package
 mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
@@ -62,5 +62,5 @@ docker build -t las-cuentas-claras .
 
 Una vez generada la imagen, ejecute el contendor con:
 ````shell script
-docker run --rm -p 8080:8080 las-cuentas-claras
+docker-compose -f docker-compose-app.yml up
 ````
