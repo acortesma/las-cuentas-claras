@@ -1,0 +1,27 @@
+package com.example.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class BalanceFriend {
+
+  private final String name;
+  private Double amount;
+  private Double balance = 0D;
+
+  public BalanceFriend(String name, Double amount) {
+    this.name = name;
+    this.amount = amount;
+  }
+
+  public void addAmount(Double amount) {
+    this.amount += amount;
+  }
+
+  public void calculateBalance(Double averagePayments) {
+
+    this.balance = averagePayments - amount;
+  }
+}
