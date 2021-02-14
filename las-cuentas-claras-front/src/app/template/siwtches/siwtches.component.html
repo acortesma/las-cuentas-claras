@@ -1,0 +1,42 @@
+<h2>Template: <small>Balances</small></h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <button type="submit" class="btn btn-success" (click)="getpayments()"> Obtener Pagos</button>
+    </div>
+</div>
+<div class="row" *ngFor="let payment of payments">
+    <div class="mb-3 row">
+        <div class="col-lg-2">
+            <span *ngIf="payment.payer.name">Id: {{payment.payer.name}}</span>
+        </div>
+        <div class="col-lg-2">
+            <span *ngIf="payment.description">Des: {{payment.description}}</span>
+        </div>
+        <div class="col-lg-2">
+            <span *ngIf="payment.amount">Cant: {{payment.amount | currency:'€':code:'0.1-2'}}</span>
+        </div>
+        <div class="col-lg-6">
+            <span *ngIf="payment.date">Fecha: {{payment.date | dateAgo}}</span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <button type="submit" class="btn btn-success" (click)="getBalanceFriends()"> Obtener Balance</button>
+    </div>
+</div>
+<div class="row" *ngFor="let balance of balanceFriends">
+    <div class="mb-3 row">
+        <div class="col-lg-2">
+            <span *ngIf="balance.name">Id: {{balance.name}}</span>
+        </div>
+        <div class="col-lg-3">
+            <span *ngIf="balance.amount">Aportado: {{balance.amount | currency:'€':code:'0.1-2'}}</span>
+        </div>
+        <div class="col-lg-6">
+            <span *ngIf="balance.balance">Ajuste: {{balance.balance | currency:'€':code:'0.1-2'}}</span>
+        </div>
+    </div>
+</div>

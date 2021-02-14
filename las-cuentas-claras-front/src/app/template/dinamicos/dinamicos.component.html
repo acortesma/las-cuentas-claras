@@ -1,0 +1,36 @@
+<h2>Template: <small>Añadir Pago</small></h2>
+<hr>
+
+<form (ngSubmit)="guardar(miFormulario)" #miFormulario="ngForm">
+    <!-- Persona-->
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label"> Amigo</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ngModel name="name" required placeholder="Nombre de la persona">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label"> Concepto</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ngModel name="description" required placeholder="Concepto del Pago">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label"> Importe</label>
+        <div class="col-sm-9">
+            <input type="number" class="form-control" ngModel name="amount"  required placeholder="Importe del Pago">
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label"> Fecha y hora</label>
+        <div class="col-sm-9">
+            <input type="datetime" class="form-control" ngModel name="date" required placeholder="yyyy-MM-dd HH:mm:ss">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary float-end"> Guardar</button>
+        </div>
+    </div>
+
+</form>
