@@ -5,3 +5,8 @@ html, body {
     height: 92%;
     
   }
+
+  div, ul, li{
+    border: 1px solid #000000;
+    border-style: dotted;
+  }
