@@ -17,6 +17,9 @@ export class SiwtchesComponent implements OnInit {
   constructor(private paymentService: PaymentsService) { }
 
   ngOnInit(): void {
+    this.getpayments();
+    this.getBalanceFriends();
+
   }
 
   getpayments() {

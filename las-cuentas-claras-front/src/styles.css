@@ -6,7 +6,42 @@ html, body {
     
   }
 
-  div, ul, li{
+/* div, ul, li{
     border: 1px solid #000000;
     border-style: dotted;
+  } */
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 50px;
+    width: 300px;
+    margin: 0 8px 16px;
+    padding: 10px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card.card-small {
+    height: 16px;
+    margin: 0 8px 8px;
+  }
+
+  .card-list{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .balance-window{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
   }
