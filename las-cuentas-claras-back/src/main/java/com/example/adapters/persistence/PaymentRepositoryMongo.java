@@ -20,9 +20,8 @@ public class PaymentRepositoryMongo implements PaymentRepository {
   public Flux<Payment> getAll() {
     return paymentRepository
         .findAllByOrderByDateDesc()
-        .doOnNext(p -> log.info("modelRepository {}", p))
-        .map(paymentMapper::modelToEntity)
-        .doOnNext(p -> log.info("EntityRepository {}", p));
+        .doOnNext(p -> log.info("Salida {}", p))
+        .map(paymentMapper::modelToEntity);
   }
 
   @Override

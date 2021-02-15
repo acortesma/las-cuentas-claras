@@ -3,18 +3,14 @@ package com.example.adapters.persistence;
 import org.springframework.stereotype.Component;
 import com.example.entities.Payment;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Component
-@Slf4j
 @AllArgsConstructor
 public class PaymentPersistenceMapper {
 
   FriendPersistenceMapper friendMapper;
 
   Payment modelToEntity(PaymentModel paymentPersistence) {
-
-    log.info("mapperPersistence {}", paymentPersistence);
 
     return Payment.builder()
         .id(paymentPersistence.getId())

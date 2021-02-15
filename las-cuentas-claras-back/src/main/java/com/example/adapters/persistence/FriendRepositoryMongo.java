@@ -4,11 +4,13 @@ import org.springframework.stereotype.Component;
 import com.example.entities.Friend;
 import com.example.use.cases.ports.output.FriendRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
 @AllArgsConstructor
+@Slf4j
 public class FriendRepositoryMongo implements FriendRepository {
 
   private FriendPersistenceMapper friendMapper;
@@ -16,7 +18,10 @@ public class FriendRepositoryMongo implements FriendRepository {
 
   public Flux<Friend> getAll() {
 
-    return friendRepository.findAll().map(friendMapper::modelToEntity);
+    return friendRepository
+        .findAll()
+        .doOnNext(p -> log.info("Salida {}", p))
+        .map(friendMapper::modelToEntity);
   }
 
   @Override

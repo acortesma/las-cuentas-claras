@@ -7,11 +7,13 @@ import com.example.entities.Payment;
 import com.example.use.cases.ports.input.PaymentService;
 import com.example.use.cases.ports.output.PaymentRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class PaymentServiceImpl implements PaymentService {
 
   PaymentRepository paymentRepository;
@@ -19,7 +21,7 @@ public class PaymentServiceImpl implements PaymentService {
   @Override
   public Flux<Payment> retrievePaymentsSortedByDate() {
 
-    return paymentRepository.getAll();
+    return paymentRepository.getAll().doOnNext(p -> log.info("Salida {}", p));
   }
 
   @Override

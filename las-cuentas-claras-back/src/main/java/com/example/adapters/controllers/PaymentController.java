@@ -26,9 +26,11 @@ public class PaymentController {
   @GetMapping
   public Flux<PaymentWebModel> retrieveAllPaymentsFromGroup() {
 
+    log.info("Retrive payments From Group");
+
     return service
         .retrievePaymentsSortedByDate()
-        .doOnNext(p -> log.info("controller {}", p))
+        .doOnNext(p -> log.info("Salida {}", p))
         .map(mapperPayment::entityToWeb);
   }
 
@@ -45,7 +47,9 @@ public class PaymentController {
   }
 
   @GetMapping("/balance")
-  public Flux<BalanceFriend> calculateBalanceGroup2() {
+  public Flux<BalanceFriend> calculateBalanceGroup() {
+
+    log.info("Obtain balance for each Friend: {}");
 
     return service.calculateBalanceGroupFriends().doOnNext(p -> log.info("controller {}", p));
   }

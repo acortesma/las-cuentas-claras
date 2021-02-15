@@ -29,8 +29,8 @@ public class FriendController {
 
     return service
         .retrieveAllFriendsFromGroup()
-        .doOnNext(p -> log.info("controller {}", p))
-        .map(mapperFriends::entityToWeb);
+        .map(mapperFriends::entityToWeb)
+        .doOnNext(p -> log.info("Salida {}", p));
   }
 
   @PostMapping
