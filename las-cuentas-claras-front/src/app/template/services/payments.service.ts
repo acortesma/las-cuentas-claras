@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Payment } from '../entity/payment';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class PaymentsService {
 
   constructor(private http: HttpClient) { }
 
-  private url = 'http://localhost:8080'
+  private url = environment.HOST_PATH_BACK;
 
   guardar(payment: Payment): Observable<Payment> {
 
