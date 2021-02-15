@@ -4,12 +4,12 @@ import { Payment } from '../entity/payment';
 import { PaymentsService } from '../services/payments.service';
 
 @Component({
-  selector: 'app-siwtches',
-  templateUrl: './siwtches.component.html',
+  selector: 'app-balances',
+  templateUrl: './balances.component.html',
   styles: [
   ]
 })
-export class SiwtchesComponent implements OnInit {
+export class BalancesComponent implements OnInit {
 
   payments: Array<Payment>;
   balanceFriends: Array<FriendBalance>;

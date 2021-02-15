@@ -5,17 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { TemplateRoutingModule } from './template-routing.module';
-import { BasicosComponent } from './basicos/basicos.component';
-import { DinamicosComponent } from './dinamicos/dinamicos.component';
-import { SiwtchesComponent } from './siwtches/siwtches.component';
+import { FriendsComponent } from './friends/friends.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { BalancesComponent } from './balances/balances.component';
 import { DateAgoPipe } from '../pipes/date-ago.pipe';
 
 
 @NgModule({
   declarations: [
-    BasicosComponent,
-    DinamicosComponent,
-    SiwtchesComponent,
+    FriendsComponent,
+    PaymentsComponent,
+    BalancesComponent,
     DateAgoPipe
   ],
   imports: [

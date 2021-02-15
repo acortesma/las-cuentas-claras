@@ -1,4 +1,3 @@
-import { ParseSourceFile } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Friend } from '../entity/friend';
@@ -6,12 +5,12 @@ import { Payment } from '../entity/payment';
 import { PaymentsService } from '../services/payments.service';
 
 @Component({
-  selector: 'app-dinamicos',
-  templateUrl: './dinamicos.component.html',
+  selector: 'app-payments',
+  templateUrl: './payments.component.html',
   styles: [
   ]
 })
-export class DinamicosComponent implements OnInit {
+export class PaymentsComponent implements OnInit {
 
   constructor(private paymentService: PaymentsService) { }
 

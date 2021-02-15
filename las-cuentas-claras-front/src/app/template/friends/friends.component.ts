@@ -4,12 +4,12 @@ import { Friend } from '../entity/friend';
 import { FriendsService } from '../services/friends.service';
 
 @Component({
-  selector: 'app-basicos',
-  templateUrl: './basicos.component.html',
+  selector: 'app-friends',
+  templateUrl: './friends.component.html',
   styles: [
   ]
 })
-export class BasicosComponent implements OnInit {
+export class FriendsComponent implements OnInit {
 
   friends: Array<Friend>;
 
