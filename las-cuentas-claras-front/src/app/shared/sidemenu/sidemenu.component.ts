@@ -14,16 +14,16 @@ export class SidemenuComponent {
 
   templateMenu: MenuItem[] = [
     {
-      texto: 'Añadir Amigo',
-      ruta: './template/basicos'
+      texto: 'Amigos',
+      ruta: './template/friends'
     },
     {
-      texto: 'Añadir Pago',
-      ruta: './template/dinamicos'
+      texto: 'Pagos',
+      ruta: './template/payments'
     },
     {
       texto: 'Balances',
-      ruta: './template/switches'
+      ruta: './template/balances'
     }
   ]
 

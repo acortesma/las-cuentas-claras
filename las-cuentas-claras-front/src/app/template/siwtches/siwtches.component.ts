@@ -22,6 +22,11 @@ export class SiwtchesComponent implements OnInit {
 
   }
 
+  refresh (){
+    this.getpayments();
+    this.getBalanceFriends();
+  }
+
   getpayments() {
     this.paymentService.getPayments().subscribe(
       res => {

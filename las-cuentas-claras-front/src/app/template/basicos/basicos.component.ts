@@ -31,6 +31,7 @@ export class BasicosComponent implements OnInit {
       res => {
         let retorno = JSON.stringify(res);
         console.log("RetornoLlamada " + retorno);
+        this.getFriends();
       },
       error => {
         let errorMsg = <any>error;

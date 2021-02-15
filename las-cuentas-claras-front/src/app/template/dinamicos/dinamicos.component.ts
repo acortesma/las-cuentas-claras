@@ -31,6 +31,7 @@ export class DinamicosComponent implements OnInit {
       res => {
         let retorno = JSON.stringify(res);
         console.log("RetornoLlamada " + retorno);
+        miFormulario.resetForm();
       },
       error => {
         console.log("Retorno Error " + error);
