@@ -16,6 +16,7 @@ export class BasicosComponent implements OnInit {
   constructor(private friendService: FriendsService) { }
 
   ngOnInit(): void {
+    this.getFriends();
   }
 
   guardar(miFormulario: NgForm) {

@@ -1,35 +1,25 @@
-<h2>Añadir Amigo</h2>
+<h2>Amigos</h2>
 <hr>
 
-<div class="row">
-    <div class="col">
-        <form (ngSubmit)="guardar(miFormulario)" #miFormulario="ngForm" autocomplete="off">
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nombre</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" ngModel name="name" required placeholder="Nombre del amigo">
-                </div>
+<div class="balance-window">
+    <form (ngSubmit)="guardar(miFormulario)" #miFormulario="ngForm" autocomplete="off">
+        <ul class="flex-outer">
+            <li>
+                <label>Nombre:</label>
+                <input type="text" ngModel name="name" required placeholder="Nombre del amigo">
+            </li>
+            <li>
+                <button type="submit">Guardar</button>
+            </li>
+        </ul>
+    </form>
+    <div>
+        <h3>Lista de Amigos:</h3>
+        <div class="card-list">
+            <div class="card card-small" *ngFor="let friend of friends">
+ <!--                <p *ngIf="friend.id">Id: {{friend.id}}</p> -->
+                <p *ngIf="friend.name">{{friend.name}}</p>
             </div>
-            <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary float-end"> Guardar</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <button type="submit" class="btn btn-success" (click)="getFriends()"> Obtener</button>
-    </div>
-</div>
-<div class="row" *ngFor="let friend of friends">
-    <div class="mb-3 row">
-        <div class="col-lg-4">
-            <span *ngIf="friend.id">Id: {{friend.id}}</span>
-        </div>
-        <div class="col-lg-3">
-            <span *ngIf="friend.name">Nombre: {{friend.name}}</span>
         </div>
     </div>
 </div>

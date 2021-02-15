@@ -1,47 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
 
+html, body, form {
+  height: 92%;
+}
 
-html, body {
-    height: 92%;
-    
-  }
+/* div, ul, li, form{
+  border: 1px solid #000000;
+  border-style: dotted;
+} */
 
-/* div, ul, li{
-    border: 1px solid #000000;
-    border-style: dotted;
-  } */
+.card {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 50px;
+  width: 300px;
+  margin: 0 8px 16px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
 
-  .card {
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 50px;
-    width: 300px;
-    margin: 0 8px 16px;
-    padding: 10px ;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
+.card.card-small {
+  height: 16px;
+  margin: 0 8px 8px;
+}
 
-  .card.card-small {
-    height: 16px;
-    margin: 0 8px 8px;
-  }
+.card-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 500px;
+}
+.balance-window {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  .card-list{
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    height: 500px;
-  }
-  .balance-window{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 100%;
-  }
+.flex-outer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.flex-outer li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 10px;
+  max-width: 200px;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-outer li input,
+.flex-outer li label {
+  padding: 10px;
+}
+
+.flex-outer li input {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  text-transform: uppercase;
+}
