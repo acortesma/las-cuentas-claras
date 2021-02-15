@@ -1,4 +1,4 @@
-# Las Cuentas Claras
+# Las Cuentas Claras Back
   
 ## Introducción
 Esta aplicación gestionará los gastos de un grupo de amigos.
@@ -31,7 +31,7 @@ Este servicio resume los puntos de entrada al servicio vía API Rest:
 
 ## Construcción
 Este proyecto se construye mediante la herramienta Maven. Si se quieren ejecutar todas las fases, basta con ejecutar 
-desde la ráiz del proyecto
+desde la raíz del proyecto
 
 ````shell script
 mvn clean install
@@ -57,10 +57,11 @@ Para generar la imagen, ejecute en la raíz del proyecto:
 ````shell script
 mvn clean package
 mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
-docker build -t las-cuentas-claras .
+docker build -t las-cuentas-claras-back .
 ````
 
 Una vez generada la imagen, ejecute el contendor con:
 ````shell script
-docker-compose -f docker-compose-app.yml up
+docker-compose -f docker-compose-back.yml up
 ````
+El api del servicio se puede consultar localmente en: http://localhost:8080/swagger-ui.html

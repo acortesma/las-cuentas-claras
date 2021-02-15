@@ -1,17 +1,17 @@
 version: "2.1"
 services:
   app:
-    image: las-cuentas-claras
-    container_name: las-cuentas-claras
+    image: las-cuentas-claras-back
+    container_name: las-cuentas-claras-back
     ports:
       - 8080:8080 
     environment:
-      - SPRING_DATA_MONGODB_HOST=mongo-las-cuentas-claras
+      - SPRING_DATA_MONGODB_HOST=las-cuentas-claras-mongo
     depends_on: 
       - db
   db:
     image: mongo
-    container_name: mongo-las-cuentas-claras
+    container_name: las-cuentas-claras-mongo
     volumes:
       - ./database:/data
     ports:

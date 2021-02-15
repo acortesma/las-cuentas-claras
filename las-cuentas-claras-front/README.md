@@ -1,27 +1,46 @@
-# LasCuentasClarasFront
+# Las Cuentas Claras Front
+  
+## Introducción
+Esta aplicación web permite gestionar los gastos de un grupo de amigos.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
-## Development server
+## Descripción funcional
+Las funciones principales son:
+* Como usuario, quiero acceder al grupo de gastos compartidos de mi grupo de amigos. Para cada gasto quiero visualizar la siguiente información ordenada por el último pago realizado: 
+** Persona que realizó el pago 
+** Importe del pago 
+** Descripción del pago. 
+** Fecha del pago 
+* Como usuario, quiero añadir una persona a mi grupo de amigos. 
+* Como usuario, quiero añadir un pago. 
+* Como usuario, quiero un balance para saber cuánto dinero tiene que pagar o recibir cada persona del grupo para que todos hubiéramos pagado lo mismo y no tener deudas entre el grupo de amigos. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Construcción
+Este proyecto se construye mediante la herramienta NPM. Para preparar el proyecto ejecute en la raíz:
+````shell script
+npm install
+````
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Ejecución en local
+Primero se debe de iniciar el proyecto "Las Cuentas Claras Back". Para ellos diríjase al apartado ***Ejecución en contenedor Docker*** del fichero [Back](../las-cuentas-claras-back) y siga los pasos
 
-## Build
+Puede iniciar la aplicación web mediante el comando:
+````shell script
+ng server -o
+````
+Esto abrirá la aplicación en su navegador, en la ruta `http://localhost:4200/`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Ejecución en contenedor Docker
+El proyecto dispone de un fichero DockerFile para poder ejecutar la aplicación dentro de un contendor
 
-## Running unit tests
+Para generar la imagen, ejecute en la raíz del proyecto:
+````shell script
+docker build -t las-cuentas-claras-front .
+````
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Una vez generada la imagen, ejecute el contendor con:
+````shell script
+docker run --rm -d -it -p 8300:8080 --name las-cuentas-claras-front las-cuentas-claras-front
+````
+La aplicación se abrirá en su navegador en la ruta `http://localhost:8300/`
