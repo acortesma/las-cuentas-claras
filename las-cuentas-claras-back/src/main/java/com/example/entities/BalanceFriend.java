@@ -15,6 +15,11 @@ public class BalanceFriend {
     this.name = name;
     this.amount = amount;
   }
+  
+  public static BalanceFriend of (String name, Double amount) {
+    
+    return new BalanceFriend(name, amount);
+  }
 
   public void addAmount(Double amount) {
     this.amount += amount;

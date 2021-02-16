@@ -2,20 +2,15 @@ package com.example.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class BalanceGroup {
 
   public BalanceGroup(List<Payment> payments) {
-    this.payments =
-        List.copyOf(payments)
-            .stream()
-            .map(p -> new BalanceFriend(p.getPayer().getName(), p.getAmount()))
-            .collect(Collectors.toList());
+    this.payments = List.copyOf(payments);
   }
 
-  private final List<BalanceFriend> payments;
+  private final List<Payment> payments;
 
   public List<BalanceFriend> calculateBalanceGroupFriends() {
 
@@ -33,8 +28,8 @@ public class BalanceGroup {
             .stream()
             .collect(
                 Collectors.toMap(
-                    BalanceFriend::getName,
-                    Function.identity(),
+                    Payment::getPayer,
+                    p -> BalanceFriend.of(p.getPayer().getName(), p.getAmount()),
                     (BalanceFriend payment1, BalanceFriend payment2) -> {
                       payment1.addAmount(payment2.getAmount());
                       return payment1;
@@ -43,7 +38,7 @@ public class BalanceGroup {
   }
 
   private double calculateAverage(List<BalanceFriend> result) {
-    return result.stream().mapToDouble(BalanceFriend::getAmount).average().getAsDouble();
+    return result.stream().mapToDouble(BalanceFriend::getAmount).average().orElse(0D);
   }
 
   private List<BalanceFriend> calculateBalaceFromEachFriend(

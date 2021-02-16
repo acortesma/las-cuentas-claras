@@ -2,6 +2,7 @@ package com.example.entities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,7 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 public class BalanceTest {
 
   @Test
-  public void balanceGroup() {
+  public void givenListOfPaymentsReturnBalanceOfFriends() {
     List<Payment> payments =
         List.of(
             Payment.builder().payer(Friend.builder().name("Pedro").build()).amount(50D).build(),
@@ -21,7 +22,6 @@ public class BalanceTest {
     var balance = new BalanceGroup(payments);
 
     var cuentas2 = balance.calculateBalanceGroupFriends();
-    cuentas2.toString();
 
     var balanceMaria = new BalanceFriend("Maria", 250d);
     balanceMaria.calculateBalance(100d);
@@ -31,5 +31,16 @@ public class BalanceTest {
     balanceEsther.calculateBalance(100d);
 
     assertThat(cuentas2, containsInAnyOrder(balanceEsther, balancePedro, balanceMaria));
+  }
+
+  @Test
+  public void givenListEmptyOfPaymentsReturnListEmptyOfFriendsBalances() {
+
+    List<Payment> payments = List.of();
+    var balance = new BalanceGroup(payments);
+
+    var listBalanceFriends = balance.calculateBalanceGroupFriends();
+
+    assertEquals(List.of(), listBalanceFriends);
   }
 }
