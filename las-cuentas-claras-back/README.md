@@ -3,6 +3,7 @@
 ## Introducción
 Esta aplicación gestionará los gastos de un grupo de amigos.
 
+test-build-2
 
 ## Descripción funcional
 Las funciones principales son:
